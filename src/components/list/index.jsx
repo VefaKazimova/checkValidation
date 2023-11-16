@@ -7,16 +7,17 @@ import ListItemText from "@mui/material/ListItemText";
 import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import { Stack, Button } from "@mui/material";
-
+import "./index.css";
 const FormList = ({ todos, setTodos }) => {
   const handleDelete = (id) => {
     const newTodo = todos.filter((item) => id != item.id);
     setTodos(newTodo);
   };
   return (
-    <List sx={{ width: "100%", maxWidth: 500, bgcolor: "background.paper" }}>
+    <div style={{display:"flex",justifyContent:"center", marginTop:"50px" }}> 
+      <List  className="List">
       {todos.map((item) => (
-        <ListItem
+        <ListItem 
           key={item.id}
           secondaryAction={
             <IconButton edge="end" aria-label="comments">
@@ -44,6 +45,8 @@ const FormList = ({ todos, setTodos }) => {
         
       ))}
     </List>
+    </div>
+
   );
 };
 
